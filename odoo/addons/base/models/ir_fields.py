@@ -533,7 +533,7 @@ class IrFieldsConverter(models.AbstractModel):
         if self._context.get('update_many2many'):
             return [Command.link(id) for id in ids], warnings
         else:
-            return [Command.set(ids)], warnings
+            return [Command.set(ids)], []
 
     @api.model
     def _str_to_one2many(self, model, field, records):
