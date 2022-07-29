@@ -37,7 +37,7 @@
                     </div>
                     <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
                     <field name="id" invisible="True"/>
-                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{'zoom': true, 'preview_image': 'image_128'}"/>
                     <div class="oe_title">
                         <label for="name" string="Product Name"/>
                         <h1>
@@ -246,7 +246,7 @@
                         <field name="active" invisible="1"/>
                         <field name="id" invisible="1"/>
                         <field name="company_id" invisible="1"/>
-                        <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
+                        <field name="image_1920" widget="image" class="oe_avatar" options="{'zoom': true, 'preview_image': 'image_128'}"/>
                         <div class="oe_title">
                             <label for="name" string="Product Name"/>
                             <h1><field name="name" readonly="1" placeholder="e.g. Odoo Enterprise Subscription"/></h1>
@@ -397,7 +397,8 @@
                         <t t-name="kanban-box">
                             <div class="oe_kanban_global_click">
                                 <div class="o_kanban_image">
-                                    <img t-att-src="kanban_image('product.product', 'image_128', record.id.raw_value)" alt="Product" class="o_image_64_contain"/>
+                                    <field name="image_1920" widget="image" class="oe_avatar" options="{'zoom': true, 'preview_image': 'image_128'}"/>
+<!--                                    <img t-att-src="kanban_image('product.product', 'image_128', record.id.raw_value)" alt="Product" class="img img-fluid o_image_64_contain" zoom="true" data-zoom="1" t-att-data-zoom-image="kanban_image('product.product', 'image_128', record.id.raw_value)"/>-->
                                 </div>
                                 <div class="oe_kanban_details">
                                     <field name="priority" widget="priority" readonly="1"/>
@@ -429,7 +430,8 @@
                     <field name="default_code"/>
                     <templates>
                         <div t-name="activity-box">
-                            <img t-att-src="activity_image('product.product', 'image_128', record.id.raw_value)" role="img" t-att-title="record.id.value" t-att-alt="record.id.value"/>
+                            <field name="image_1920" widget="image" class="oe_avatar" options="{'zoom': true, 'preview_image': 'image_128'}"/>
+<!--                            <img class="img img-fluid" t-att-src="activity_image('product.product', 'image_128', record.id.raw_value)" role="img" t-att-title="record.id.value" t-att-alt="record.id.value" zoom="true" data-zoom="1" t-att-data-zoom-image="activity_image('product.product', 'image_128', record.id.raw_value)"/>-->
                             <div>
                                 <field name="name" display="full"/>
                                 <div t-if="record.default_code.value" class="text-muted">
